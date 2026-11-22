@@ -1,4 +1,4 @@
-# 👋 Hi, I'm jp
+# 👋 JP Profile
 
 <p align="center">
   <img src="spider.svg" alt="A spider climbing a wall" width="600" />

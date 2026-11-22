@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <defs>
+    <linearGradient id="col" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#141a2c"/>
+      <stop offset="0.5" stop-color="#26324f"/>
+      <stop offset="1" stop-color="#141a2c"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a0d18" stop-opacity="0"/>
+      <stop offset="1" stop-color="#9c1c28"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <style>
+    .spider { animation: climb 7s ease-in-out infinite; }
+    @keyframes climb {
+      0%, 100% { transform: translate(300px, 50px); }
+      50%      { transform: translate(300px, 190px); }
+    }
+    .glow { animation: pulse 3s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+  </style>
+
+  <!-- background -->
+  <rect width="600" height="300" fill="#0a0d18"/>
+  <rect x="150" y="0" width="230" height="300" fill="url(#col)"/>
+  <rect x="430" y="0" width="170" height="300" fill="url(#red)" filter="url(#soft)"/>
+
+  <!-- blurred red lights -->
+  <g class="glow" filter="url(#blur)" fill="#ff2a3a">
+    <circle cx="40" cy="245" r="9"/>
+    <circle cx="78" cy="252" r="9"/>
+    <circle cx="540" cy="262" r="10"/>
+  </g>
+
+  <!-- rail -->
+  <rect x="0" y="278" width="600" height="5" fill="#8a7a5a"/>
+  <rect x="0" y="283" width="600" height="17" fill="#05070d"/>
+
+  <!-- spider on a thread -->
+  <g class="spider">
+    <line x1="0" y1="-400" x2="0" y2="0" stroke="#cfd6e6" stroke-width="1.2" opacity="0.8"/>
+    <g fill="none" stroke="#e8ecf5" stroke-width="2.4" stroke-linecap="round">
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="-12;12;-12" dur="0.7s" repeatCount="indefinite"/>
+        <path d="M-6 -2 L-26 -10 L-30 -22"/>
+        <path d="M-7 4 L-28 6 L-34 18"/>
+        <path d="M-5 8 L-18 20 L-14 32"/>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" values="12;-12;12" dur="0.7s" repeatCount="indefinite"/>
+        <path d="M6 -2 L26 -10 L30 -22"/>
+        <path d="M7 4 L28 6 L34 18"/>
+        <path d="M5 8 L18 20 L14 32"/>
+      </g>
+    </g>
+    <ellipse cx="0" cy="10" rx="8" ry="11" fill="#12131c" stroke="#e8ecf5" stroke-width="1.5"/>
+    <circle cx="0" cy="-8" r="6" fill="#12131c" stroke="#e8ecf5" stroke-width="1.5"/>
+    <circle cx="-2.5" cy="-9" r="1.7" fill="#ffffff"/>
+    <circle cx="2.5" cy="-9" r="1.7" fill="#ffffff"/>
+  </g>
+
+  <text x="300" y="296" text-anchor="middle" fill="#8b949e" font-family="monospace" font-size="11">jp864x // learning C++</text>
+</svg>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="spider.svg" alt="A spider climbing in a night city" width="600" />
+  <img src="banner.svg" alt="jp864x // learning C++" width="800" style="max-width: 100%; border-radius: 8px;" />
 </p>
 
 <h2 align="center">👋 Hi, I'm jp</h2>
@@ -11,9 +11,4 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=jp864x&theme=tokyonight&hide_border=true" alt="Contribution streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=jp864x&theme=react-dark&hide_border=true" alt="Contribution activity graph" width="100%" />
-</p>
+  <img src="

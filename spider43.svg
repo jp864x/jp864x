@@ -1,0 +1,275 @@
+<svg width="900" height="340" viewBox="0 0 900 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <clipPath id="bannerClip">
+      <rect x="0" y="0" width="900" height="340" rx="18" />
+    </clipPath>
+
+    
+    <linearGradient id="bgBase" x1="0" y1="0" x2="900" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#05060b" />
+      <stop offset="48%" stop-color="#091326" />
+      <stop offset="78%" stop-color="#170a1c" />
+      <stop offset="100%" stop-color="#22050d" />
+    </linearGradient>
+
+    <radialGradient id="blueAura" cx="56%" cy="46%" r="42%">
+      <stop offset="0%" stop-color="#0077ff" stop-opacity="0.48" />
+      <stop offset="55%" stop-color="#0044aa" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="redAura" cx="80%" cy="50%" r="36%">
+      <stop offset="0%" stop-color="#ff1a35" stop-opacity="0.52" />
+      <stop offset="55%" stop-color="#9e001c" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="webCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff2a4b" stop-opacity="0.65" />
+      <stop offset="45%" stop-color="#0088ff" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="spideyLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1738" />
+      <stop offset="50%" stop-color="#c42bff" />
+      <stop offset="85%" stop-color="#00a2ff" />
+      <stop offset="100%" stop-color="#00a2ff" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <linearGradient id="metalTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff1f3d" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#e5e9f5" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0095ff" stop-opacity="0.9" />
+    </linearGradient>
+
+    
+    <pattern id="halftone" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.9" fill="#ffffff" fill-opacity="0.06" />
+    </pattern>
+
+    
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="spideyGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="-4" dy="0" stdDeviation="6" flood-color="#0088ff" flood-opacity="0.45" />
+      <feDropShadow dx="5" dy="8" stdDeviation="10" flood-color="#ff1738" flood-opacity="0.5" />
+    </filter>
+
+    <filter id="bokehBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" />
+    </filter>
+
+    
+    <path id="webRing" d="
+      M 100,0
+      Q 82.1,22 86.6,50
+      Q 60.1,60.1 50,86.6
+      Q 22,82.1 0,100
+      Q -22,82.1 -50,86.6
+      Q -60.1,60.1 -86.6,50
+      Q -82.1,22 -100,0
+      Q -82.1,-22 -86.6,-50
+      Q -60.1,-60.1 -50,-86.6
+      Q -22,-82.1 0,-100
+      Q 22,-82.1 50,-86.6
+      Q 60.1,-60.1 86.6,-50
+      Q 82.1,-22 100,0 Z" fill="none" vector-effect="non-scaling-stroke" />
+  </defs>
+
+  <style>
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    /* Weightless floating motion for Spider-Man */
+    .spidey-float {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: floatAround 6.5s ease-in-out infinite;
+    }
+    @keyframes floatAround {
+      0%   { transform: translate(0px, 0px) rotate(0deg); }
+      25%  { transform: translate(8px, -13px) rotate(2deg); }
+      50%  { transform: translate(-5px, -5px) rotate(-1.5deg); }
+      75%  { transform: translate(-9px, -15px) rotate(-1deg); }
+      100% { transform: translate(0px, 0px) rotate(0deg); }
+    }
+
+    /* Ground shadow breathing in sync with float */
+    .float-shadow {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: shadowPulse 6.5s ease-in-out infinite;
+    }
+    @keyframes shadowPulse {
+      0%, 100% { transform: scale(1); opacity: 0.55; }
+      25%, 75% { transform: scale(0.84); opacity: 0.3; }
+      50%      { transform: scale(0.94); opacity: 0.45; }
+    }
+
+    /* Slow web rotation &amp; pulse */
+    .web-spin {
+      transform-origin: 705px 168px;
+      animation: webBreath 14s ease-in-out infinite;
+    }
+    @keyframes webBreath {
+      0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.42; }
+      50%      { transform: rotate(5deg) scale(1.03); opacity: 0.62; }
+    }
+
+    /* Swinging top-left spider */
+    .spider-swing {
+      transform-origin: 48px 0px;
+      animation: pendulum 5s ease-in-out infinite;
+    }
+    @keyframes pendulum {
+      0%, 100% { transform: rotate(-6deg); }
+      50%      { transform: rotate(7deg); }
+    }
+
+    /* Spidey-sense zaps */
+    .sense {
+      animation: senseZap 3.2s ease-in-out infinite;
+    }
+    @keyframes senseZap {
+      0%, 60%, 100% { opacity: 0; }
+      68%, 76%      { opacity: 0.95; }
+      72%           { opacity: 0.25; }
+      82%           { opacity: 0.65; }
+    }
+
+    /* Terminal blinking cursor */
+    .cursor {
+      animation: blink 1s steps(2, start) infinite;
+    }
+    @keyframes blink {
+      to { opacity: 0; }
+    }
+
+    /* Floating bokeh embers */
+    .ember-1 { animation: drift 7s ease-in-out infinite; }
+    .ember-2 { animation: drift 9s ease-in-out infinite reverse; }
+    .ember-3 { animation: drift 6s ease-in-out infinite 1.5s; }
+    @keyframes drift {
+      0%, 100% { transform: translateY(0px); opacity: 0.65; }
+      50%      { transform: translateY(-16px); opacity: 0.25; }
+    }
+  </style>
+
+  <g clip-path="url(#bannerClip)">
+    
+    <rect width="900" height="340" fill="url(#bgBase)" />
+    <rect width="900" height="340" fill="url(#blueAura)" />
+    <rect width="900" height="340" fill="url(#redAura)" />
+    <rect width="900" height="340" fill="url(#halftone)" />
+
+    
+    <g fill="#04060d" opacity="0.72">
+      <path d="M 0,340 L 0,275 L 34,275 L 34,242 L 62,242 L 62,268 L 96,268 L 96,220 L 128,220 L 128,260 L 175,260 L 175,234 L 210,234 L 210,272 L 260,272 L 260,210 L 296,210 L 296,254 L 350,254 L 350,230 L 388,230 L 388,266 L 445,266 L 445,244 L 490,244 L 490,278 L 545,278 L 545,215 L 580,215 L 580,258 L 640,258 L 640,228 L 675,228 L 675,268 L 745,268 L 745,198 L 760,185 L 775,198 L 775,250 L 820,250 L 820,224 L 860,224 L 860,264 L 900,264 L 900,340 Z" />
+    </g>
+
+    
+    <g filter="url(#bokehBlur)">
+      <circle class="ember-1" cx="92" cy="285" r="14" fill="#ff1e3c" />
+      <circle class="ember-2" cx="122" cy="256" r="8" fill="#008cff" />
+      <circle class="ember-3" cx="498" cy="72" r="10" fill="#00a2ff" />
+      <circle class="ember-1" cx="842" cy="272" r="16" fill="#ff1e3c" />
+      <circle class="ember-2" cx="815" cy="76" r="11" fill="#ff2a4b" />
+    </g>
+
+    
+    <circle cx="705" cy="168" r="165" fill="url(#webCore)" />
+    <g class="web-spin">
+      <g transform="translate(705, 168)" stroke="#d9e8ff" stroke-opacity="0.45" stroke-width="1">
+        
+        <line x1="-220" y1="0" x2="220" y2="0" />
+        <line x1="0" y1="-220" x2="0" y2="220" />
+        <line x1="-190.5" y1="-110" x2="190.5" y2="110" />
+        <line x1="-110" y1="-190.5" x2="110" y2="190.5" />
+        <line x1="110" y1="-190.5" x2="-110" y2="190.5" />
+        <line x1="190.5" y1="-110" x2="-190.5" y2="110" />
+
+        
+        <use href="#webRing" transform="scale(0.32)" />
+        <use href="#webRing" transform="scale(0.64)" />
+        <use href="#webRing" transform="scale(1.02)" />
+        <use href="#webRing" transform="scale(1.45)" />
+        <use href="#webRing" transform="scale(1.92)" />
+      </g>
+    </g>
+
+    
+    <g class="spider-swing">
+      <line x1="48" y1="0" x2="48" y2="54" stroke="#9ab4d8" stroke-opacity="0.5" stroke-width="1" />
+      <g transform="translate(48, 60) scale(0.85)" fill="#c7d5e8" stroke="#080c16" stroke-width="0.8">
+        
+        <ellipse cx="0" cy="-4" rx="4.2" ry="5.2" />
+        <ellipse cx="0" cy="6" rx="6.2" ry="8.5" />
+        
+        <path d="M -4,-3 L -15,-14 L -22,-4 M 4,-3 L 15,-14 L 22,-4" fill="none" stroke="#c7d5e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M -5,0 L -19,-4 L -24,10 M 5,0 L 19,-4 L 24,10" fill="none" stroke="#c7d5e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M -5,4 L -18,8 L -20,21 M 5,4 L 18,8 L 20,21" fill="none" stroke="#c7d5e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M -4,9 L -12,18 L -11,29 M 4,9 L 12,18 L 11,29" fill="none" stroke="#c7d5e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </g>
+
+    
+    <ellipse class="float-shadow" cx="695" cy="316" rx="92" ry="12" fill="#000000" />
+
+    <g class="spidey-float">
+      
+      <g class="sense" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#neonGlow)">
+        <path d="M 632,48 L 620,41 L 626,33 L 612,26" />
+        <path d="M 642,30 L 635,18 L 644,14 L 638,4" />
+        <path d="M 738,48 L 750,41 L 744,33 L 758,26" />
+        <path d="M 728,30 L 735,18 L 726,14 L 732,4" />
+      </g>
+
+      
+      
+    </g>
+
+    
+    
+    <text x="86" y="102" class="mono" font-size="11.5" fill="#7aa6e8" letter-spacing="2.5">// EARTH-616 · WEB SLINGER</text>
+
+    
+    <text x="83" y="149" class="title" font-size="42" fill="#ff1738" opacity="0.72">YOUR NAME</text>
+    <text x="89" y="149" class="title" font-size="42" fill="#00c3ff" opacity="0.72">YOUR NAME</text>
+    <text x="86" y="149" class="title" font-size="42" fill="#ffffff">YOUR NAME</text>
+
+    
+    <rect x="86" y="164" width="335" height="3.5" rx="2" fill="url(#spideyLine)" filter="url(#neonGlow)" />
+
+    
+    <rect x="86" y="188" width="365" height="46" rx="10" fill="#070b14" fill-opacity="0.78" stroke="#2c446e" stroke-width="1.2" />
+    <text x="104" y="216" class="mono" font-size="14" fill="#d9e6ff">
+      <tspan fill="#ff2442">&gt;</tspan> crafting webs &amp; clean code
+    </text>
+    <rect class="cursor" x="342" y="201" width="9" height="20" rx="1.5" fill="#ff2442" filter="url(#neonGlow)" />
+
+    
+    <circle cx="92" cy="264" r="4" fill="#ff2442" filter="url(#neonGlow)" />
+    <text x="104" y="268" class="mono" font-size="11" fill="#8ca2c7" letter-spacing="1.5">SPIDEY-SENSE: ACTIVE</text>
+
+    
+    <path d="M 0,318 L 250,318 Q 266,318 266,334 L 266,340" stroke="url(#metalTrim)" stroke-width="3" fill="none" opacity="0.85" />
+    <line x1="620" y1="324" x2="900" y2="324" stroke="url(#metalTrim)" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+    <rect x="0.75" y="0.75" width="898.5" height="338.5" rx="18" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5" />
+  </g>
+</svg>
